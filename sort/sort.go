@@ -11,7 +11,7 @@ type Number interface {
 // Time Complexity: O(N)
 //
 // Space: O(1)
-func Shuffle(arr []int) {
+func Shuffle[T Number](arr []T) {
 	for i := 0; i < len(arr); i++ {
 		idx := rand.Intn(len(arr))
 		arr[i], arr[idx] = arr[idx], arr[i]

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	arr := []int{1, 999, 222, 342, 14, 2}
+	arr := []float64{1.3, 999, 222, 342, 14, 2}
 	fmt.Println("BUBBLE")
 	sort.BubbleSort(arr)
 	fmt.Println(arr)
@@ -25,7 +25,7 @@ func main() {
 	fmt.Println(arr)
 }
 
-func shuffle(arr []int) {
+func shuffle[T sort.Number](arr []T) {
 	fmt.Printf("SHUFFLE\n")
 	sort.Shuffle(arr)
 	fmt.Println(arr)
