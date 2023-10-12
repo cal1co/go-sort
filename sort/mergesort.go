@@ -10,14 +10,14 @@ package sort
 //
 // Note: Mergesort guarantees a stable and efficient sorting approach, making it
 // suitable for various scenarios, including large datasets.
-func MergeSort(arr []int) {
+func MergeSort[T Number](arr []T) {
 	if len(arr) <= 1 {
 		return
 	}
 
 	middle := len(arr) / 2
-	left := make([]int, middle)
-	right := make([]int, len(arr)-middle)
+	left := make([]T, middle)
+	right := make([]T, len(arr)-middle)
 	copy(left, arr[:middle])
 	copy(right, arr[middle:])
 
@@ -27,7 +27,7 @@ func MergeSort(arr []int) {
 	merge(arr, left, right)
 }
 
-func merge(arr, left, right []int) {
+func merge[T Number](arr, left, right []T) {
 	l, r := 0, 0
 	for i := 0; i < len(arr); i++ {
 		if l < len(left) && (r >= len(right) || left[l] <= right[r]) {

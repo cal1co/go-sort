@@ -9,7 +9,7 @@ package sort
 //
 // Note: Quicksort's performance relies on pivot selection, and it is subject to
 // variations in performance based on pivot choices.
-func QuickSort(arr []int) {
+func QuickSort[T Number](arr []T) {
 	if len(arr) <= 1 {
 		return
 	}
@@ -19,7 +19,7 @@ func QuickSort(arr []int) {
 	QuickSort(arr[pivotIndex+1:])
 }
 
-func partition(arr []int) int {
+func partition[T Number](arr []T) int {
 	pivot := arr[len(arr)-1]
 	i := -1
 

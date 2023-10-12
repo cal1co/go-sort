@@ -2,6 +2,10 @@ package sort
 
 import "math/rand"
 
+type Number interface {
+	int | int16 | int32 | int64 | float32 | float64
+}
+
 // Shuffle is a linear time shuffle operation that reliably reorganizes an integer array
 //
 // Time Complexity: O(N)
